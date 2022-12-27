@@ -1,18 +1,20 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_Pemilihan extends CI_Model
-{
-    var $table = 'pemilihantender';
-    var $column_order = array('kode_rup','kode_tender','nama_tender','satuan_kerja','jenis_pengadaan','metode_pengadaan','pemenang','npwp','alamat','nilai_pagu','nilai_hps','nilai_Pterkoreksi','nilai_Phasilnego','efisiensi_keuangan','tanggal','tahapan',null); //set column field database for datatable orderable
-	var $column_search = array('kode_rup','kode_tender','nama_tender','satuan_kerja','jenis_pengadaan','metode_pengadaan','pemenang','npwp','alamat','nilai_pagu','nilai_hps','nilai_Pterkoreksi','nilai_Phasilnego','efisiensi_keuangan','tanggal','tahapan'); //set column field database for datatable searchable just firstname , lastname , address are searchable
-	var $order = array('id_pemilihantender' => 'desc'); // default order 
+class Person_model extends CI_Model {
 
-    public function getAlldata()
-    {
-        return $this->db->get($this->table)->result();
-    }
+	var $table = 'persons';
+	var $column_order = array('firstname','lastname','gender','address','dob',null); //set column field database for datatable orderable
+	var $column_search = array('firstname','lastname','address'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+	var $order = array('id' => 'desc'); // default order 
 
-    private function _get_datatables_query()
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+	}
+
+	private function _get_datatables_query()
 	{
 		
 		$this->db->from($this->table);
@@ -51,7 +53,7 @@ class M_Pemilihan extends CI_Model
 		}
 	}
 
-    function get_datatables()
+	function get_datatables()
 	{
 		$this->_get_datatables_query();
 		if($_POST['length'] != -1)
@@ -73,16 +75,16 @@ class M_Pemilihan extends CI_Model
 		return $this->db->count_all_results();
 	}
 
-    public function get_by_id($id)
+	public function get_by_id($id)
 	{
 		$this->db->from($this->table);
-		$this->db->where('id_pemilihantender',$id);
+		$this->db->where('id',$id);
 		$query = $this->db->get();
 
 		return $query->row();
 	}
 
-    public function save($data)
+	public function save($data)
 	{
 		$this->db->insert($this->table, $data);
 		return $this->db->insert_id();
@@ -96,8 +98,9 @@ class M_Pemilihan extends CI_Model
 
 	public function delete_by_id($id)
 	{
-		$this->db->where('id_pemilihantender', $id);
+		$this->db->where('id', $id);
 		$this->db->delete($this->table);
 	}
+
 
 }

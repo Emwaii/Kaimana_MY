@@ -21399,7 +21399,7 @@ body .bi:before {
     top: 0;
     transition: left .5s ease-out;
     width: 300px;
-    z-index: 9999
+    z-index: 10
 }
 
 .sidebar-wrapper .sidebar-header {

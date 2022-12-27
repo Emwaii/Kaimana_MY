@@ -8599,7 +8599,7 @@ body.theme-dark .sidebar-wrapper {
     top: 0;
     transition: left .5s ease-out;
     width: 300px;
-    z-index: 9999
+    z-index: 10
 }
 
 body.theme-dark .sidebar-wrapper .sidebar-header {

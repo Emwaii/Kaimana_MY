@@ -10,8 +10,14 @@
         <link rel="shortcut icon" href="assets/images/logo/favicon.svg" type="image/x-icon">
         <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/png">
         <link rel="stylesheet" href="assets/css/pages/fontawesome.css">
-        <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css">
-        <link rel="stylesheet" href="assets/css/pages/simple-datatables.css">
+        
+        <!-- Simple Datatables -->
+        <!-- <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css"> -->
+        <!-- <link rel="stylesheet" href="assets/css/pages/simple-datatables.css"> -->
+        
+        <!-- Pure Datatables -->
+        <link rel="stylesheet" href="assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="assets/css/pages/datatables.css">
     </head>
 
         <body>

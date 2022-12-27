@@ -7,143 +7,134 @@
     <!-- End import component Sidebar -->
     <!-- Main Body -->
         <div id="main" class='layout-navbar'>
-            <header class='mb-3'>
-                <nav class="navbar navbar-expand navbar-light navbar-top">
-                    <div class="container-fluid">
-                        <a href="#" class="burger-btn d-block">
-                            <i class="bi bi-justify fs-3"></i>
-                        </a>
+            <!-- Import component Navbar -->
+                <?php $this->load->view('component/_navbar') ?>
+            <!-- End import component Navbar -->
 
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mb-lg-0">
-                                <li class="nav-item dropdown me-1">
-                                    <a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <i class='bi bi-envelope bi-sub fs-4'></i>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <h6 class="dropdown-header">Mail</h6>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">No new mail</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown me-3">
-                                    <a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                        <i class='bi bi-bell bi-sub fs-4'></i>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="dropdownMenuButton">
-                                        <li class="dropdown-header">
-                                            <h6>Notifications</h6>
-                                        </li>
-                                        <li class="dropdown-item notification-item">
-                                            <a class="d-flex align-items-center" href="#">
-                                                <div class="notification-icon bg-primary">
-                                                    <i class="bi bi-cart-check"></i>
-                                                </div>
-                                                <div class="notification-text ms-4">
-                                                    <p class="notification-title font-bold">Successfully check out</p>
-                                                    <p class="notification-subtitle font-thin text-sm">Order ID #256</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="dropdown-item notification-item">
-                                            <a class="d-flex align-items-center" href="#">
-                                                <div class="notification-icon bg-success">
-                                                    <i class="bi bi-file-earmark-check"></i>
-                                                </div>
-                                                <div class="notification-text ms-4">
-                                                    <p class="notification-title font-bold">Homework submitted</p>
-                                                    <p class="notification-subtitle font-thin text-sm">Algebra math homework</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <p class="text-center py-2 mb-0"><a href="#">See all notification</a></p>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="dropdown">
-                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="user-menu d-flex">
-                                        <div class="user-name text-end me-3">
-                                            <h6 class="mb-0 text-gray-600">John Ducky</h6>
-                                            <p class="mb-0 text-sm text-gray-600">Administrator</p>
-                                        </div>
-                                        <div class="user-img d-flex align-items-center">
-                                            <div class="avatar avatar-md">
-                                                <img src="assets/images/faces/1.jpg">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton" style="min-width: 11rem;">
-                                    <li>
-                                        <h6 class="dropdown-header">Hello, John!</h6>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
-                                            Profile</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
-                                            Settings</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
-                                            Wallet</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </header>
             <!-- Main Element -->
             <div id="main-content">
                 <div class="page-heading">
                     <div class="page-title">
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col-12 col-md-6 order-md-1 order-last">
-                                <h3>Vertical Layout with Navbar</h3>
-                                <p class="text-subtitle text-muted">Navbar will appear on the top of the page.</p>
+                                <h3>Tabel Data Tender</h3>
+                                <!-- <p class="text-subtitle text-muted">Powerful interactive tables with datatables (jQuery required)</p> -->
                             </div>
                             <div class="col-12 col-md-6 order-md-2 order-first">
                                 <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Layout Vertical Navbar</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Tabel Data Tender</li>
                                     </ol>
                                 </nav>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Basic Tables start -->
                     <section class="section">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Example Content</h4>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="button" onclick="add_person()" class="btn btn-outline-success float-right" data-bs-toggle="tooltip" data-bs-title="Tambah Data"><i data-feather="plus"></i></button>
+                                    <button type="button" onclick="reload_table()" class="btn btn-outline-primary float-right" data-bs-toggle="tooltip" data-bs-title="Refresh Data"><i data-feather="refresh-cw"></i></button>
+                                </div>
                             </div>
                             <div class="card-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quas omnis laudantium tempore
-                                exercitationem, expedita aspernatur sed officia asperiores unde tempora maxime odio reprehenderit
-                                distinctio incidunt! Vel aspernatur dicta consequatur!
+                                <table class="table table-hover display table-responsive" id="table_navbar"  cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Gender</th>
+                                            <th>Address</th>
+                                            <th>Date of Birth</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </section>
+                    <!-- Basic Tables end -->
                 </div>
-                <!-- Import component Footer -->
-                <?php $this->load->view('component/_footer') ?>
-                <!-- End import component Footer -->
-            </div>
             <!-- Main Element -->
+    
+            <!-- Import component Footer -->
+            <?php $this->load->view('component/_footer') ?>
+            <!-- End import component Footer -->
+            </div>
         </div>
     <!-- End Main Body -->
     </div>
     <!-- Import component Jquery -->
     <?php $this->load->view('component/_jquery') ?>
     <!-- End import component Jquery -->
+    <!-- Import component AJAX -->
+    <?php $this->load->view('component/ajax') ?>
+    <!-- End import component AJAX -->
+
+    <!-- Bootstrap modal -->
+<div class="modal fade" id="modal_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Person Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                    <input type="hidden" value="" name="id"/> 
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">First Name</label>
+                            <div class="col-md-9">
+                                <input name="firstName" placeholder="First Name" class="form-control" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Last Name</label>
+                            <div class="col-md-9">
+                                <input name="lastName" placeholder="Last Name" class="form-control" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Gender</label>
+                            <div class="col-md-9">
+                                <select name="gender" class="form-control">
+                                    <option value="">--Select Gender--</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Address</label>
+                            <div class="col-md-9">
+                                <textarea name="address" placeholder="Address" class="form-control"></textarea>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Date of Birth</label>
+                            <div class="col-md-9">
+                                <input name="dob" placeholder="yyyy-mm-dd" class="form-control datepicker" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

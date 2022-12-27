@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="card-body table-responsive">
-                                <table class="table table-hover " id="table1">
+                                <table class="table table-hover " id="table_tender">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -55,25 +55,10 @@
                                             <th>Nilai HPS</th>
                                             <th>Tanggal</th>
                                             <th>Tahapan</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $i = 1; 
-                                            foreach ($all as $data) : ?>
-                                                <tr>
-                                                    <td><?= $i++ ?></td>
-                                                    <td><?php echo $data->kode_rup ?></td>
-                                                    <td><?php echo $data->kode_tender ?></td>
-                                                    <td><?php echo $data->nama_tender ?></td>
-                                                    <td><?php echo $data->satuan_kerja ?></td>
-                                                    <td><?php echo $data->jenis_pengadaan ?></td>
-                                                    <td><?php echo $data->metode_pengadaan ?></td>
-                                                    <td><?php echo $data->nilai_pagu ?></td>
-                                                    <td><?php echo $data->nilai_hps ?></td>
-                                                    <td><?php echo $data->tanggal ?></td>
-                                                    <td><?php echo $data->tahapan ?></td>
-                                                </tr>
-                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -93,3 +78,6 @@
     <!-- Import component Jquery -->
     <?php $this->load->view('component/_jquery') ?>
     <!-- End import component Jquery -->
+    <!-- Import component AJAX -->
+    <?php $this->load->view('component/ajax') ?>
+    <!-- End import component AJAX -->

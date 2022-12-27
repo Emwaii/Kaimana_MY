@@ -53,5 +53,5 @@ $route['default_controller'] = 'c_tender';
 $route['404_override'] = 'welcome/notfound';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['tender'] = 'welcome/notfound';
-$route['testing'] = 'welcome/navbar';
+// $route['tender'] = 'welcome/notfound';
+// $route['testing'] = 'person';
