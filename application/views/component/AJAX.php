@@ -49,7 +49,16 @@
     });
 
     function reload_table(){
-        $('table.display').DataTable().ajax.reload(null,false); //reload datatable ajax 
+        swal.fire({
+            imageUrl: "<?= base_url('assets/loader.gif'); ?>",
+            title: "Refresh Data",
+            text: "Mohon Tunggu",
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            timer: 1000
+        }).then((result) => {
+            $('table.display').DataTable().ajax.reload(null,false); //reload datatable ajax 
+        });
     }
 
     function add_person(){
@@ -133,25 +142,65 @@
         });
     }
     function delete_person(id){
-        if(confirm('Are you sure delete this data?'))
-        {
-            // ajax delete data to database
-            $.ajax({
-                url : "<?php echo site_url('person/ajax_delete')?>/"+id,
-                type: "POST",
-                dataType: "JSON",
-                success: function(data)
-                {
-                    //if success reload ajax table
-                    $('#modal_form').modal('hide');
-                    reload_table();
-                },
-                error: function (jqXHR, textStatus, errorThrown)
-                {
-                    alert('Error deleting data');
-                }
-            });
-
-        }
+        Swal.fire({
+            icon: 'warning',
+            title: 'Peringatan',
+            text: "Anda yakin ingin menghapus data ini?",
+            allowOutsideClick: false,
+            showCancelButton: true,
+            confirmButtonColor: '#5f76e8',
+            cancelButtonColor: '#fd5f7d',
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Tidak, Cancel!',
+        }).then(result => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url : "<?php echo site_url('person/ajax_delete')?>/"+id,
+                    type: "POST",
+                    dataType: "JSON",
+                    success: function(data)
+                    {
+                        swal.fire({
+                            imageUrl: "<?= base_url('assets/loader.gif'); ?>",
+                            title: "Menghapus Data",
+                            text: "Mohon Tunggu",
+                            showConfirmButton: false,
+                            allowOutsideClick: false,
+                            timer: 1500
+                        }).then((result) => {
+                            Swal.fire({
+                                title: "Berhasil",
+                                text:"Data Berhasil Dihapus",
+                                icon: "success",
+                                showConfirmButton: false,
+                                allowOutsideClick: false,
+                                timer: 2000
+                            });
+                        });
+                        $('table.display').DataTable().ajax.reload(null,false); //reload datatable ajax 
+                    },
+                    error: function (jqXHR, textStatus, errorThrown)
+                    {
+                        Swal.fire({
+                            title: "Gagal",
+                            text:"Data Gagal Dihapus",
+                            icon: "error",
+                            showConfirmButton: false,
+                            allowOutsideClick: false,
+                            timer: 1500
+                        });
+                    }
+                });
+            }else if (
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire({
+                    title: "Dibatalkan",
+                    text:  "Data kamu terselamatkan, hati-hati :)",
+                    icon: "error",
+                    allowOutsideClick: false,
+                });
+            }
+        });
     }
 </script>

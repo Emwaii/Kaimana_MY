@@ -31,9 +31,16 @@ class Person extends CI_Controller {
 			$row[] = $person->dob;
 
 			//add html for action
-			$row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_person('."'".$person->id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-				  <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete_person('."'".$person->id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
-		
+			$row[] = '
+            <div class="dropdown-center">
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                    <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu" style="min-width: auto;">
+                    <li><a class="dropdown-item" href="javascript:void(0)" onclick="edit_person('."'".$person->id."'".')">Edit</a></li>
+                    <li><a class="dropdown-item" href="javascript:void(0)" onclick="delete_person('."'".$person->id."'".')">Hapus</a></li>
+                </ul>
+            </div>';		
 			$data[] = $row;
 		}
 

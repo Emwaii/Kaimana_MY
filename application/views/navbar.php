@@ -124,7 +124,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Date of Birth</label>
                             <div class="col-md-9">
-                                <input name="dob" placeholder="yyyy-mm-dd" class="form-control datepicker" type="text">
+                                <input name="dob" id="dob" placeholder="yyyy-mm-dd" class="form-control datepicker" type="text">
                                 <span class="help-block"></span>
                             </div>
                         </div>
